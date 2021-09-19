@@ -23,3 +23,14 @@ AttachGateway:
          Ref: VPC
       InternetGatewayId:
          Ref: IBMInternetGateway
+IBMpubSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: VPC
+      CidrBlock: 10.0.0.0/24
+      AvailabilityZone: "us-east-2a"
+      MapPublicIpOnLaunch: 'True'
+      Tags:
+      - Key: Name
+        Value: IBM-PUB
