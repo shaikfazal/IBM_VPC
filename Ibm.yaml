@@ -71,3 +71,10 @@ IGWRoute:
        DestinationCidrBlock: 0.0.0.0/0
        GatewayId:
          Ref: IBMInternetGateway
+IBMPubSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: IBMpubSubnet
+      RouteTableId:
+        Ref: IBMpubRouteTable
