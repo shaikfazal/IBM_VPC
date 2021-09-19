@@ -78,3 +78,10 @@ IBMPubSubnetRouteTableAssociation:
         Ref: IBMpubSubnet
       RouteTableId:
         Ref: IBMpubRouteTable
+IBMPvtSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId:
+        Ref: IBMpvtSubnet
+      RouteTableId:
+        Ref: IBMpvtRouteTable
