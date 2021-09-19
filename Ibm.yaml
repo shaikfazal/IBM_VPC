@@ -62,3 +62,12 @@ IBMpvtRouteTable:
       Tags:
       - Key: Name
         Value: IBM-PVT-RT
+IGWRoute:
+    Type: AWS::EC2::Route
+    DependsOn: AttachGateway
+    Properties:
+       RouteTableId:
+         Ref: IBMpubRouteTable
+       DestinationCidrBlock: 0.0.0.0/0
+       GatewayId:
+         Ref: IBMInternetGateway
